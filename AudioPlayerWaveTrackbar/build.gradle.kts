@@ -4,6 +4,7 @@ plugins {
 //    alias(libs.plugins.kotlin.kapt)
 //    id(libs.plugins.kotlin.kapt.get().pluginId) apply false
     id("kotlin-kapt")
+    id("maven-publish")
 }
 
 android {
@@ -39,6 +40,19 @@ android {
         jvmTarget = "11"
     }
 }
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                from (components["release"])
+                groupId = "com.github.mint"
+                artifactId = "mint-android-app"
+                version = "1.0.0"
+            }
+        }
+    }
+}
+
 dependencies {
 //    implementation(libs.androidx.databinding.runtime)
 //    kapt(libs.androidx.databinding.compiler)

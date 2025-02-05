@@ -48,7 +48,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_circle"
-                    android:backgroundTint="@color/primary"
+                    android:backgroundTint="#0000ff"
                     android:src="@{isPlaying ? @drawable/ic_voice_pause : @drawable/ic_voice_play}"
                     app:layout_constraintDimensionRatio="H, 1:1"
                     app:layout_constraintEnd_toEndOf="parent"
