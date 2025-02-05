@@ -45,8 +45,8 @@ afterEvaluate {
         publications {
             create<MavenPublication>("maven") {
                 from (components["release"])
-                groupId = "com.github.mint"
-                artifactId = "mint-android-app"
+                groupId = "com.github.KananTaghili"
+                artifactId = "AudioPlayerWaveTrackbar"
                 version = "1.0.0"
             }
         }
