@@ -1,6 +1,9 @@
+import org.gradle.kotlin.dsl.from
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -34,6 +37,37 @@ android {
         jvmTarget = "11"
     }
 }
+
+subprojects {
+    afterEvaluate {
+        if (plugins.hasPlugin("com.android.library")) {
+            apply(plugin = "maven-publish")
+            publishing {
+                publications {
+                    create<MavenPublication>("mavenAar") {
+                        from(components["release"])
+                        groupId = "com.github.KananTaghili"
+                        artifactId = "AudioPlayerWaveTrackbar"
+                        version = "1.0.0"
+                    }
+                }
+                // ... repositories ...
+            }
+        }
+    }
+}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            create<MavenPublication>("maven") {
+//                from (components["release"])
+//                groupId = "com.github.KananTaghili"
+//                artifactId = "AudioPlayerWaveTrackbar"
+//                version = "1.0.0"
+//            }
+//        }
+//    }
+//}
 
 dependencies {
 
