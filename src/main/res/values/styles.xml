@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomAudioPlayer">
+        <attr format="float" name="progress"/>
+        <attr format="color" name="waveBackgroundColor"/>
+        <attr format="color" name="waveProgressColor"/>
+        <attr format="color" name="seekBarBackgroundColor"/>
+        <attr format="color" name="seekBarProgressColor"/>
+        <attr format="color" name="seekBarThumbColor"/>
+        <attr format="dimension" name="seekBarThumbSize"/>
+        <attr format="color" name="playButtonColor"/>
+        <attr format="dimension" name="waveWidth"/>
+        <attr format="dimension" name="waveMinHeight"/>
+        <attr format="dimension" name="waveCornerRadius"/>
+    </declare-styleable>
+</resources>
